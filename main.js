@@ -260,6 +260,8 @@ class Canvas {
 
 };
 
+// Implementation of Conway's game of life
+
 let test = new Canvas(document.getElementById('test'),100);
 let frame;
 let intervalId;
@@ -347,7 +349,7 @@ function gaia() {
                 tmp.push(new Pixel(gaiaTest.pixels[i][j].x, gaiaTest.pixels[i][j].y, gaiaTest.pixels[i][j].width, gaiaTest.pixels[i][j].height, 'blue'));
             }
             else if (state === 'brown') {
-                if (neighboorsBrown > 4) {
+                if (neighboorsBrown > 3) {
                     tmp.push(new Pixel(gaiaTest.pixels[i][j].x, gaiaTest.pixels[i][j].y, gaiaTest.pixels[i][j].width, gaiaTest.pixels[i][j].height, 'green'));
                 }
                 else {
@@ -355,7 +357,7 @@ function gaia() {
                 }
             }
             else if (state === 'green') {
-                if (neighboorsBrown >= 4) {
+                if (neighboorsBrown >= 3) {
                     tmp.push(new Pixel(gaiaTest.pixels[i][j].x, gaiaTest.pixels[i][j].y, gaiaTest.pixels[i][j].width, gaiaTest.pixels[i][j].height, 'brown'));
                 }
                 else if (neighboorsBlue >= 7) {
@@ -399,8 +401,10 @@ document.getElementById('gaiaStopButton').addEventListener('click', (e) => {
 
 
 test.canvas.addEventListener('click', (e) => {
-    console.log(test.pixels[e.x][e.y]);
-})
+    test.pixels[Math.floor(e.x/(test.width/test.density))][Math.floor(e.y/(test.height/test.density))].color = 'black';
+    test.draw();
+    console.log(test.pixels[Math.floor(e.x/(test.width/test.density))][Math.floor(e.y/(test.height/test.density))]);
+});
 
 console.log(test,gaiaTest);
 
