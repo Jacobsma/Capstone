@@ -1,0 +1,12 @@
+body {
+    background-color: darkgrey;
+}
+canvas {
+    border: solid;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -8,14 +8,43 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <canvas id="test" width="500" height="500"></canvas>
-    <button id="resetButton">Reset</button>
-    <button id="startButton" style="color:green">Start</button>
-    <button id="stopButton" style="color:red">End</button>
-    <canvas id="gaiaTest" width="500" height="500"></canvas>
-    <button id="gaiaResetButton">Reset</button>
-    <button id="gaiaStartButton" style="color:green">Start</button>
-    <button id="gaiaStopButton" style="color:red">End</button>
+
+    <div class="container">
+      <article>
+        <header>
+          <h1>Capstone</h1>
+        </header>
+        <p>
+          Conway's Game of Life
+        </p>
+        <canvas id="test" width="500" height="500"></canvas>
+
+        <br>
+
+        <button id="resetButton">Reset</button>
+        <button id="startButton" style="color:green">Start</button>
+        <button id="stopButton" style="color:red">Stop</button>
+
+        <br><br>
+
+        <p>
+          Gaia
+        </p>
+        <canvas id="gaiaTest" width="500" height="500"></canvas>
+
+        <br>
+
+        <button id="gaiaResetButton">Reset</button>
+        <button id="gaiaStartButton" style="color:green">Start</button>
+        <button id="gaiaStopButton" style="color:red">Stop</button>
+
+      </article>
+
+    </div>
+
+
+
+
     <script src="main.js" type="module"></script>
     <script src="//cdn.jsdelivr.net/terra/latest/mainfile" type="module"></script>
   </body>
